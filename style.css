@@ -46,7 +46,7 @@ body {
 	background-image: url('bg_texture.jpg');
 	background-size: 206px 275px;
 }
-.bg-overlay {
+.bgGradient {
 	z-index: -1;
 	position: fixed;
 	top: 0;
