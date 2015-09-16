@@ -36,15 +36,21 @@ img {
 }
 
 body {
-	margin: 30px;
+	margin: 60px 0 10px;
 	font-family: 'New Era Casual', Georgia, serif;
-	font-size: 22px;
+	font-size: 18px;
 	line-height: 1.2;
 	text-align: center;
 	color: #eed;
 	background-color: #012d3a;
 	background-image: url('bg_texture.jpg');
 	background-size: 206px 275px;
+}
+@media screen and (min-width : 768px) {
+	body {
+		margin: 30px;
+		font-size: 22px;
+	}
 }
 .bgGradient {
 	z-index: -1;
@@ -66,17 +72,30 @@ body {
 
 .faq__toggle {
 	z-index: 100;
+	position: static;
 	position: fixed;
-	top: 10px;
-	right: 20px;
-	width: 60px;
+	top: 0;
+	right: 0;
+	width: 100%;
 	height: 60px;
-	background: url('shared_assets/ui/case_toggle.png') no-repeat center right;
+	background-color: #000;
+	background-color: rgba(0,0,0, 0.7);
+	background-image: url('shared_assets/ui/case_toggle.png');
+	background-position: 95% center;
+	background-repeat: no-repeat;
 	background-size: contain;
-	opacity: 0.7;
 	-webkit-transition: .4s opacity;
 	transition: .4s opacity;
 	cursor: help;
+}
+@media screen and (min-width : 768px) {
+	.faq__toggle {
+		top: 10px;
+		right: 20px;
+		width: 60px;
+		background-color: transparent;
+		opacity: 0.7;
+	}
 }
 .faq__toggle:hover, .faq__toggle:focus {
 	opacity: 1;
@@ -91,8 +110,14 @@ body {
 	left: 0;
 	height: 100%;
 	width: 100%;
+	padding-top: 50px;
 	background-color: rgba(0,0,0, 0.6);
 	overflow: auto;
+}
+@media screen and (min-width : 768px) {
+	.faq__toggle {
+		padding-top: 0;
+	}
 }
 .faq--visible {
 	display: block;
