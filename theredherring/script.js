@@ -42,7 +42,7 @@ var restOfGame = [
 	"ui/suspect_4.png",
 	"ui/suspect_4.png",
 	"../shared_assets/ui/accusemurderer_btn.png",
-	"backgrounds/act2_bg.jpg",
+	"backgrounds/tavern.jpg",
 	"characters/seagull.png",
 	"characters/seal.png",
 	"characters/lobster.png",
