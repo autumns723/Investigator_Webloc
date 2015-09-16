@@ -340,10 +340,10 @@ a:hover {
 	height: auto;
 }
 .clue-col h2 {
-	margin: 0;
+	margin: 0 0 .2em;
 	font-size: 1.5em;
 	font-weight: bold;
-	line-height: 1.5;
+	line-height: 1;
 }
 .clue-col p {
 	margin: 0;
@@ -382,10 +382,10 @@ a:hover {
 	height: auto;
 }
 .suspect-col h2 {
-	margin: 0 0 5%;
+	margin: 0 0 .2em;
 	font-size: 1.5em;
 	font-weight: bold;
-	line-height: 1.2;
+	line-height: 1;
 }
 .suspect-col p {
 	margin: 0 0 8%;
@@ -447,17 +447,17 @@ a:hover {
 /* Responsive font sizes */
 
 @media screen and (max-width : 1280px) {
-	body {
-		font-size: 12px;
-	}
+	body { font-size: 12px; }
 }
-@media screen and (max-width : 768px) {
-	body {
-		font-size: 10px;
-	}
+@media screen and (max-width : 1000px) {
+	body { font-size: 11px; }
+}
+@media screen and (max-width : 800px) {
+	body { font-size: 10px; }
+}
+@media screen and (max-width : 600px) {
+	body { font-size: 9px; }
 }
 @media screen and (max-width : 480px) {
-	body {
-		font-size: 8px;
-	}
+	body { font-size: 8px; }
 }
