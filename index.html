@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>The Investigator Cases</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="shared_assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="shared_assets/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="shared_assets/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="shared_assets/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="shared_assets/favicons/favicon-96x96.png" sizes="96x96">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="shared_assets/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- OpenGraph -->
+	<meta property="og:title" content="The Investigator Cases">
+	<meta property="og:description" content="The Investigator Cases are an ongoing series of short point and click whodunnits about an alligator who investigates crime. Investigate gruesome murders, interrogate suspects, and collect clues, all until the time comes to accuse the murderer.">
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://constancecchen.github.io/Investigator/opengraph.jpg">
+	<meta property="og:url" content="https://constancecchen.github.io/Investigator/">
+	<meta name="description" content="The Investigator Cases are an ongoing series of short point and click whodunnits about an alligator who investigates crime. Investigate gruesome murders, interrogate suspects, and collect clues, all until the time comes to accuse the murderer.">
+	<meta name="twitter:site" content="@constancecchen">
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+	<div class="bgGradient"></div>
+	<div id="js-faqToggle" class="faq__toggle" title="FAQ" aria-label="Frequently Asked Questions"></div>
+
+	<div class="container">
+		<img src="logo.png" alt="The Investigator Cases" aria-label="The Investigator Cases">
+
+		<p>The Investigator Cases are an ongoing series of short point-and-click whodunnits about an alligator who investigates crime. Follow Investigator, Bobbycat, and his various faithful sidekicks as they investigate gruesome murders, interrogate suspects, collect clues, and finally accuse the murderer in the most dramatic fashion possible.</p>
+	</div>
+
+	<div class="cases">
+		<a class="case" href="theunconventionalweapon/">
+			<img src="theunconventionalweapon/opengraph.jpg"
+				title="Play Investigator and the Case of the Unconventional Weapon"
+				alt="Play Investigator and the Case of the Unconventional Weapon"
+				aria-label="Play Investigator and the Case of the Unconventional Weapon">
+		</a>
+		<a class="case" href="theredherring/">
+			<img src="theredherring/opengraph.jpg"
+				title="Play Investigator and the Case of the Red Herring"
+				alt="Play Investigator and the Case of the Red Herring"
+				aria-label="Play Investigator and the Case of the Red Herring">
+		</a>
+	</div>
+
+	<div id="js-faq" class="faq">
+		<div id="js-faqNoToggle" class="faq__container">
+			<p>
+				<b class="faq__question">How often does a new game come out?</b>
+				<br>A new Investigator game is produced once every 3 months or so (i.e., once every Ludum Dare gamejam).
+			</p>
+
+			<img src="shared_assets/ui/undiscovered.png" align="right" width="150" height="150" alt="Unknown suspect">
+
+			<p>
+				<b class="faq__question">Who the heck is making these?</b>
+				<br>Investigator is mostly a solo endeavor by an individual known as <a href="http://www.theskyandthesea.com">Constance Chen</a>. She adores Professor Layton, Agatha Christie, and any excuse to come up with a bunch of animal rhymes and horrendous puns.
+			</p>
+
+			<p>
+				<b class="faq__question">I'm interested in getting in touch!</b>
+				<br>Sure! Feel free to <a href="https://www.twitter.com/constancecchen">shoot me a Tweet</a> or <a href="mailto:cchen@theskyandthesea.com">email</a>.
+			</p>
+
+			<p>Please note that Investigator requires Javascript to run, and works best on modern browsers.</p>
+		</div>
+	</div>
+
+	<script>
+		/* FAQ modal toggle */
+		document.getElementById("js-faqToggle").onclick = function() {
+			var faq = document.getElementById("js-faq");
+
+			if (faq.className == "faq") {
+				faq.className += " faq--visible";
+			} else {
+				faq.className = "faq";
+			}
+		}
+		document.getElementById("js-faq").onclick = function() {
+			document.getElementById("js-faq").className = "faq";
+		}
+		document.getElementById("js-faqNoToggle").addEventListener('click', function(event){
+			event.stopPropagation();
+		});
+	</script>
+</body>
+</html>

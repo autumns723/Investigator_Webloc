@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Investigator and the Case of the Red Herring</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../shared_assets/base.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- JavaScript is kept in the header because it's essential to the game. -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../shared_assets/base.js"></script>
+	<script src="script.js"></script>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../shared_assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-96x96.png" sizes="96x96">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="../shared_assets/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- OpenGraph -->
+	<meta property="og:title" content="Investigator and the Case of the Red Herring">
+	<meta property="og:description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick the Trauma Llama look into the death of the Sunk Skunk, found floating down the river by the docks.">
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://constancecchen.github.io/Investigator/theredherring/opengraph.jpg">
+	<meta property="og:url" content="https://constancecchen.github.io/Investigator/theredherring.html">
+	<meta name="description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick the Trauma Llama look into the death of the Sunk Skunk, found floating down the river by the docks.">
+	<meta name="twitter:site" content="@constancecchen">
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<audio src="../shared_assets/music/act1.mp3" id="bgmusic" autoplay loop> </audio>
+
+<div id="wrapper">
+	<div id="sound-toggle" title="Toggle Sound"></div>
+	<div id="case-file-toggle" title="View Case File"></div>
+	<div id="case-file-bg">
+		<div id="tab-suspects"></div>
+		<div id="tab-clues"></div>
+		<div id="case-file">
+			<div id="clues-folder">
+				<div id="clues">
+					<div id="clue1" class="clue-col">
+						<img src="ui/clue_1.png">
+						<h2>Cause of Death</h2>
+						<p>Cause of death was definitely drowning.</p>
+					</div>
+					<div id="clue2" class="clue-col">
+						<img src="ui/clue_2.png">
+						<h2>Medical Examination</h2>
+						<p>The victim had three cracked ribs and other signs of struggle.</p>
+					</div>
+					<div id="clue3" class="clue-col">
+						<img src="ui/clue_3.png">
+						<h2>Victim's Wallet</h2>
+						<p>The victim apparently owed $400 to the owner of The Red Herring.</p>
+					</div>
+					<div id="clue4" class="clue-col">
+						<img src="ui/clue_4.png">
+						<h2>Gang Tattoo</h2>
+						<p>The victim belonged to a local river gang known as The King Crabs.</p>
+					</div>
+					<div id="clue5" class="clue-col">
+						<img src="ui/clue_5.png">
+						<h2>Smuggled Drugs</h2>
+						<p>A crate of smuggled opium, found floating near the victim.</p>
+					</div>
+					<div id="clue6" class="clue-col">
+						<img src="ui/clue_6.png">
+						<h2>Tin of Sardines</h2>
+						<p>The packaging is the same as those found next to the victim.</p>
+					</div>
+					<div id="clue7" class="clue-col">
+						<img src="ui/clue_7.png">
+						<h2>Tavern Brawl Photo</h2>
+						<p>A polaroid of Squeal the Seal and the Sunk Skunk fighting.</p>
+					</div>
+					<div id="clue8" class="clue-col">
+						<img src="ui/clue_8.png">
+						<h2>Hit Order</h2>
+						<p>A mob letter detailing a hit on persons unknown.</p>
+					</div>
+					<div id="clue9" class="clue-col">
+						<img src="ui/clue_9.png">
+						<h2>Glass of Salt Water</h2>
+						<p>&ldquo;I have got to stop storing water in my clues folder.&rdquo;</p>
+					</div>
+					<div id="clue10" class="clue-col">
+						<img src="ui/clue_10.png">
+						<h2>Toxicology Report</h2>
+						<p>The victim's blood alcohol levels were absurdly high.</p>
+					</div>
+				</div>
+			</div>
+			<div id="suspects-folder">
+				<div id="suspects">
+					<div id="victim" class="suspect-col">
+						<img src="ui/victim.png">
+						<h2>The Sunk Skunk</h2>
+						<p>&ldquo;A nasty fellow, by all accounts. Mid-30's, did odd jobs along the dock. He spent most of his time at The Red Herring, a local tavern, drinking and getting thrown out for brawling.</p>
+						<p>We found him washed up on the shore of the river, quite close to the Herring.&rdquo;</p>
+					</div>
+					<div id="suspect1" class="suspect-col">
+						<img src="ui/suspect_1.png">
+						<h2>The Illegal Seagull</h2>
+						<p>Hired the Sunk Skunk for a delivery job that went bad.</p>
+						<p>&ldquo;I sent him to deliver a load of my cargo a coupla days ago and haven't s-seen hide or hair of that th-thief since then!&rdquo;</p>
+					</div>
+					<div id="suspect2" class="suspect-col">
+						<img src="ui/suspect_2.png">
+						<h2>Squeal the Seal</h2>
+						<p>Claims to have known the victim, but is incapable of actually describing him. Still, he seems willing to talk, and may be a useful source of information.</p>
+						<p>&ldquo;Was he the guy always walking around with a skateboard and studded jewelry? Or was the the one who played a mean saxophone and had an afro?&rdquo;</p>
+					</div>
+					<div id="suspect3" class="suspect-col">
+						<img src="ui/suspect_3.png">
+						<h2>The Mobster Lobster</h2>
+						<p>A taciturn mafioso, rumored to be a high-ranking member of the Crayfish Crew gang, rivals to the King Crabs.</p>
+						<p>&ldquo;...&rdquo;</p>
+					</div>
+					<div id="suspect4" class="suspect-col">
+						<img src="ui/suspect_4.png">
+						<h2>The Overseas Bernese</h2>
+						<p>Was owed money by by the victim, who was apparently a poorly-behaved (if loyal) customer.</p>
+						<p>&ldquo;Business ain't been so good, lately. I was countin' on the Sunk Skunk coughing up and then selling The Red Herring for a ticket outta this dump.&rdquo;</p>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div id="interrogation">
+		<div class="dialogue"><p></p></div>
+	</div>
+	<div id="dialogue"></div>
+</div>
+
+<div id="preloader">
+	<div id="status">
+		<p><img src="../shared_assets/ui/loading.gif"></p>
+	</div>
+</div>
+
+<div id="cantplay" class="hidden">
+	<h1>Hey there!
+	<br><br>I'm terribly sorry, but your browser isn't modern enough to run this game. I sincerely encourage you to <a href="http://outdatedbrowser.com/">update your browser</a> if you can.
+	<br><br>If not, no worries, and have a great day!</h1>
+</div>
+
+<noscript>
+	<div id="noscript">
+		<h1>Hey there!
+		<br><br>This web game requires Javascript. If you're still interested in playing, disable any script blockers or switch to a device & browser with Javascript support.
+		<br><br>If not, no worries, and have a great day!</h1>
+	</div>
+</noscript>
+	
+</body>
+</html>

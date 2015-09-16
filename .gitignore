@@ -1,0 +1,5 @@
+# Any non-production or raw files such as PSDs, fonts, etc.
+
+raw_assets/
+PSDs/
+*.psd

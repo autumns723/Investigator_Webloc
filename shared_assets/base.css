@@ -1,0 +1,463 @@
+/* Main Patterns */
+
+@font-face {
+	font-family: 'New Era Casual';
+	src: url('fonts/NewEraCasualRegular.woff2') format('woff2'),
+	     url('fonts/NewEraCasualRegular.woff') format('woff');
+}
+@font-face {
+	font-family: 'New Era Casual';
+	src: url('fonts/NewEraCasualBold.woff2') format('woff2'),
+	     url('fonts/NewEraCasualBold.woff') format('woff')
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'New Era Casual';
+	src: url('fonts/NewEraCasualItalic.woff2') format('woff2'),
+	     url('fonts/NewEraCasualItalic.woff') format('woff')
+	font-style: italic;
+}
+
+body, html {
+	height: 100%;
+}
+body {
+	font-family: 'New Era Casual', Georgia, serif;
+	font-size: 18px;
+	line-height: 1;
+	color: #470a01;
+	background: #000;
+	overflow: hidden;
+}
+a, img, a img {
+	border: 0;
+	color: #470a01;
+	text-decoration: none;
+}
+a:hover {
+	color: #864738;
+	cursor: url('ui/cursor4.png'), auto;
+}
+
+/* Users without Javascript enabled or with browsers that can't run the game */
+
+#noscript, #cantplay {
+	display: table;
+	z-index: 99;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+#noscript h1, #cantplay h1 {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 5%;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+}
+#cantplay a {
+	color: #fff;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#cantplay.hidden {
+	display: none;
+}
+
+/* Preload screen */
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000;
+	z-index: 99;
+}
+#status {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	color: #fff;
+	display: table;
+}
+#status p {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/* Main container */
+
+#wrapper {
+	width: 100vw;
+	height: 56.25vw;
+	max-height: 100vh;
+	max-width: 177.78vh;
+	margin: auto;
+	position: absolute;
+	top:0;bottom:0;
+	left:0;right:0;
+	cursor: url('ui/cursor1.png'), auto;
+	z-index: 0;
+	overflow: hidden;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.background {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	box-shadow: inset 0 0 2em #000;
+}
+
+/* Interactable elements */
+
+.character, .arrows, .interactable, .accuse {
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.character:hover {
+	cursor: url('ui/cursor4.png'), auto;
+}
+.interactable:hover {
+	cursor: url('ui/cursor3.png'), auto;
+}
+.arrows {
+	display: none;
+}
+.arrows:hover {
+	cursor: url('ui/cursor2.png'), auto;
+}
+.selected {
+	border-radius: 50%;
+	border: 2px solid #fff;
+}
+
+/* Dialogue */
+
+#dialogue {
+	z-index: 90;
+}
+.dialogue-cover {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: opacity 1s ease;
+	-webkit-transition: opacity 1s ease;
+}
+.dialogue-cover:last-child {
+	opacity: 1;
+	-webkit-animation: show .8s ease;
+	-animation: show .8s ease;
+}
+@-webkit-keyframes show {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+@keyframes show {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+.dialogue {
+	z-index: 90;
+	position: absolute;
+	bottom: 4%;
+	left: 8%;
+	width: 84%;
+	background-image: url('ui/dialogue_bg.jpg');
+	background-repeat: repeat-y;
+	background-size: 100% auto;
+	padding: 1% 2% 2% 2%;
+	border-radius: 1rem;
+	box-sizing: border-box;
+	box-shadow: 0 0 1rem 0 #470a01;
+}
+.dialogue h2 {
+	margin: 0;
+	font-weight: bold;
+	font-size: 2.2em;
+	line-height: 1.5;
+}
+.dialogue p {
+	margin: 0;
+	font-size: 2em;
+	line-height: 1.2;
+}
+.dialogue a {
+	display: block;
+	padding-top: 1%;
+}
+#interrogation {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.questioned {
+	color: #bea18c;
+}
+.questioned:hover {
+	color: #af9480;
+}
+#convo-characters {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+}
+.dialogue-cover.dramatic {
+	background: rgba(0,0,0,0.6);
+}
+
+/* UI elements */
+
+#sound-toggle {
+	z-index: 99;
+	position: absolute;
+	top: 2%;
+	left: 1.5%;
+	width: 4%;
+	height: 7%;
+	background: url('ui/soundon.png') no-repeat center right;
+	background-size: contain;
+	opacity: 0.7;
+	-webkit-transition: .4s opacity;
+	transition: .4s opacity;
+}
+#sound-toggle:hover, #case-file-toggle:hover {
+	opacity: 1;
+	cursor: url('ui/cursor5.png'), auto;
+}
+#sound-toggle.sound-disabled {
+	background-image: url('ui/soundoff.png');
+}
+#case-file-bg {
+	display: none;
+	z-index: 95;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	background: rgba(0,0,0,0.9)
+}
+#case-file-toggle {
+	z-index: 99;
+	position: absolute;
+	top: 2%;
+	right: 1.5%;
+	width: 6%;
+	height: 9%;
+	background: url('ui/case_toggle.png') no-repeat center right;
+	background-size: contain;
+	opacity: 0.7;
+	-webkit-transition: .4s opacity;
+	transition: .4s opacity;
+}
+#case-file-bg > div, #case-file > div {
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+#case-file {
+	top: 4%;
+	right: 10%;
+	width: 80%;
+	height: 92%;
+	background-image: url('ui/case_folder.png');
+}
+#tab-clues {
+	top: 12%;
+	left: 6%;
+	width: 7%;
+	height: 26%;
+	background-image: url('ui/tab_clues.png');
+}
+#tab-suspects {
+	top: 32%;
+	left: 6%;
+	width: 7%;
+	height: 25%;
+	background-image: url('ui/tab_suspects.png');
+}
+#tab-clues:hover, #tab-suspects:hover {
+	left: 5.5%;
+	cursor: url('ui/cursor5.png'), auto;
+}
+#clues-folder {
+	width: 100%;
+	height: 100%;
+	background-image: url('ui/header_clues.png');
+}
+#clues {
+	position: absolute;
+	top: 17%;
+	left: 5%;
+	width: 90%;
+	height: 80%;
+}
+.clue-col {
+	float: left;
+	width: 20%;
+	height: 50%;
+	background-image: url('ui/undiscovered.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 70% auto;
+	text-align: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.clue-col img {
+	width: 70%;
+	height: auto;
+}
+.clue-col h2 {
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.5;
+}
+.clue-col p {
+	margin: 0;
+	padding: 0 0 0 5%;
+	font-size: 1.2em;
+	line-height: 1.2;
+	text-align: left;
+}
+#suspects-folder {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-image: url('ui/header_suspects.png');
+}
+#suspects {
+	position: absolute;
+	top: 17%;
+	left: 3%;
+	width: 94%;
+	height: 80%;
+}
+.suspect-col {
+	float: left;
+	width: 20%;
+	height: 96%;
+	background-image: url('ui/undiscovered.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 80% auto;
+	text-align: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.suspect-col img {
+	width: 80%;
+	height: auto;
+}
+.suspect-col h2 {
+	margin: 0 0 5%;
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.2;
+}
+.suspect-col p {
+	margin: 0 0 8%;
+	padding: 0 2% 0 5%;
+	font-size: 1.2em;
+	line-height: 1.2;
+	text-align: left;
+}
+.clue-col > *, .suspect-col > * {
+	display: none;
+}
+.revealed {
+	background-image: none;
+}
+
+/* Accuse Murderer UI */
+
+#accuse-murderer {
+	display: none;
+	bottom: 4%;
+	left: 28%;
+	width: 43%;
+	height: 18%;
+	background-image: url('ui/accusemurderer_btn.png');
+	-webkit-transition: .4s all ease;
+	transition: .4s all ease;
+}
+#accuse-murderer:hover {
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+/* Ending Credits */
+
+/* TODO: Create a reusable template for this
+#credits  {
+	background-image: url('backgrounds/credits_bg.jpg');
+}*/
+#credits a {
+	color: #eee;
+	cursor: url('ui/cursor3.png'), auto;
+}
+#audio-credits, #special-thanks {
+	top: 48%;
+	width: 25%;
+	height: 50%;
+	color: #eee;
+	font-size: 2em;
+	text-align: center;
+}
+#special-thanks {
+	right: 4%;
+}
+#audio-credits {
+	left: 4%;
+}
+
+/* Responsive font sizes */
+
+@media screen and (max-width : 1280px) {
+	body {
+		font-size: 12px;
+	}
+}
+@media screen and (max-width : 768px) {
+	body {
+		font-size: 10px;
+	}
+}
+@media screen and (max-width : 480px) {
+	body {
+		font-size: 8px;
+	}
+}

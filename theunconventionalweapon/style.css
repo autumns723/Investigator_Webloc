@@ -1,0 +1,198 @@
+/* Main Menu */
+
+#mainmenu {
+	background-image: url('backgrounds/mainmenu_bg.jpg');
+}
+#mainmenu_start {
+	top: 61%;
+	left: 35%;
+	width: 31%;
+	height: 29%;
+	background: url('ui/mainmenu_start.png') no-repeat;
+	background-size: contain;
+	-webkit-transition: .4s top ease-out;
+	transition: .4s top ease-out;
+}
+#mainmenu_start:hover {
+	top: 60%;
+}
+
+/* Act 1 */
+
+#act1 {
+	background-image: url('backgrounds/act1_bg.jpg');
+}
+#lid {
+	top: 79%;
+	left: 24%;
+	width: 26%;
+	height: 20%;
+}
+#bruises {
+	top: 42%;
+	left: 27%;
+	width: 23%;
+	height: 12%;
+}
+#quills {
+	top: 37%;
+	left: 71%;
+	width: 10%;
+	height: 11%;
+}
+#feathers {
+	top: 43%;
+	left: 17%;
+	width: 6%;
+	height: 11%;
+}
+#act1-sink {
+	top: 79%;
+	left: 65%;
+	width: 35%;
+	height: 20%;
+}
+#act1-toilet {
+	top: 60%;
+	left: 48%;
+	width: 20%;
+	height: 17%;
+}
+#act1-exit {
+	top: 81%;
+	left: 7%;
+	width: 8%;
+	height: 15%;
+	background-image: url('../shared_assets/ui/exit.png');
+}
+#bobbycat {
+	bottom: 0%;
+	right: 0%;
+	width: 27%;
+	height: 77%;
+	background-image: url('../shared_assets/characters/bobbycat.png');
+}
+#investigator {
+	bottom: 0%;
+	left: 14%;
+	width: 33%;
+	height: 81%;
+	background-image: url('../shared_assets/characters/investigator.png');
+}
+#chinchilla {
+	bottom: 0%;
+	left: 1%;
+	width: 28%;
+	height: 51%;
+	background-image: url('characters/vanilla_chinchilla.png');
+}
+
+/* Act 2 */
+
+#act2 {
+	background-image: url('backgrounds/act2_bg.jpg');
+}
+#talkto-chicken {
+	top: 20%;
+	left: 44%;
+	width: 15%;
+	height: 49%;
+}
+#talkto-coyote {
+	top: 22%;
+	left: 29%;
+	width: 12%;
+	height: 50%;
+}
+#talkto-porcupine {
+	top: 37%;
+	left: 64%;
+	width: 15%;
+	height: 33%;
+}
+#talkto-yak {
+	top: 7%;
+	left: 75%;
+	width: 8%;
+	height: 31%;
+}
+
+#letter {
+	top: 56%;
+	left: 19%;
+	width: 8%;
+	height: 17%;
+}
+#bill {
+	top: 62%;
+	left: 0;
+	width: 9%;
+	height: 14%;
+}
+#pictureframe {
+	top: 6%;
+	left: 57%;
+	width: 7%;
+	height: 16%;
+}
+
+#chicken {
+	bottom: 0%;
+	right: 0%;
+	width: 36%;
+	height: 63%;
+	background-image: url('characters/chicken.png')
+}
+#coyote {
+	bottom: 0%;
+	right: 5%;
+	width: 34%;
+	height: 70%;
+	background-image: url('characters/coyote.png')
+}
+#porcupine {
+	bottom: 0%;
+	right: 0%;
+	width: 36%;
+	height: 57%;
+	background-image: url('characters/porcupine.png')
+}
+#yak {
+	bottom: 0%;
+	right: 0%;
+	width: 30%;
+	height: 95%;
+	background-image: url('characters/yak.png')
+}
+
+/* Act 3 */
+
+#act3 {
+	background-image: url('backgrounds/act2_bg.jpg');
+}
+#dialogue #investigator {
+	left: 0%;
+}
+#dialogue #bobbycat {
+	left: 0%;
+	-webkit-transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+#end14 #coyote  {
+	right: 11%;
+}
+#end14 #chicken  {
+	right: -10%;
+}
+#end14 #porcupine  {
+	right: -19%;
+}
+
+/* Ending Credits */
+
+#credits  {
+	background-image: url('backgrounds/credits_bg.jpg');
+}

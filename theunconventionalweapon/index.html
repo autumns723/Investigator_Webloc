@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Investigator and the Case of the Unconventional Weapon</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="../shared_assets/base.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- JavaScript is kept in the header because it's essential to the game. -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../shared_assets/base.js"></script>
+	<script src="script.js"></script>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../shared_assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-96x96.png" sizes="96x96">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="../shared_assets/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- OpenGraph -->
+	<meta property="og:title" content="Investigator and the Case of the Unconventional Weapon">
+	<meta property="og:description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick the Vanilla Chinchilla look into the murder of McGuffin the Puffin, found floating face down in the bathtub with a bloodied toilet tank lid on the floor.">
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://constancecchen.github.io/Investigator/theunconventionalweapon/opengraph.jpg">
+	<meta property="og:url" content="https://constancecchen.github.io/Investigator/theunconventionalweapon/">
+	<meta name="description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick the Vanilla Chinchilla look into the murder of McGuffin the Puffin, found floating face down in the bathtub with a bloodied toilet tank lid on the floor.">
+	<meta name="twitter:site" content="@constancecchen">
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<audio src="../shared_assets/music/act1.mp3" id="bgmusic" autoplay loop> </audio>
+
+<div id="wrapper">
+	<div id="sound-toggle" title="Toggle Sound"></div>
+	<div id="case-file-toggle" title="View Case File"></div>
+	<div id="case-file-bg">
+		<div id="tab-suspects"></div>
+		<div id="tab-clues"></div>
+		<div id="case-file">
+			<div id="clues-folder">
+				<div id="clues">
+					<div id="clue1" class="clue-col">
+						<img src="ui/clue_1.png">
+						<h2>Toilet Tank Lid</h2>
+						<p>The murder weapon. Cracked, with the blood of the victim on it.</p>
+					</div>
+					<div id="clue2" class="clue-col">
+						<img src="ui/clue_2.png">
+						<h2>Neck Bruises</h2>
+						<p>Strangulation marks. The formation of the prints indicate claws.</p>
+					</div>
+					<div id="clue3" class="clue-col">
+						<img src="ui/clue_3.png">
+						<h2>Soaked Feathers</h2>
+						<p>Two feathers not matching the victim's coloration were found in the bathtub water.</p>
+					</div>
+					<div id="clue4" class="clue-col">
+						<img src="ui/clue_4.png">
+						<h2>Broken Quills</h2>
+						<p>Pieces of quills were found within the open toilet tank.</p>
+					</div>
+					<div id="clue5" class="clue-col">
+						<img src="ui/clue_5.png">
+						<h2>Break Up Letter</h2>
+						<p>A sordid letter written by the late victim, listing all the reasons why he wanted to break up.</p>
+					</div>
+					<div id="clue6" class="clue-col">
+						<img src="ui/clue_6.png">
+						<h2>Payment Due Bill</h2>
+						<p>A collections notice from the Stricken Chicken, indicating the victim owed him money.</p>
+					</div>
+					<div id="clue7" class="clue-col">
+						<img src="ui/clue_7.png">
+						<h2>Old Picture</h2>
+						<p>An old picture of the Throaty Coyote and the Borderline Porcupine holding hands.</p>
+					</div>
+					<div id="clue8" class="clue-col">
+						<img src="ui/clue_8.png">
+						<h2>Glass of Water</h2>
+						<p>&ldquo;The Vanilla Chinchilla, stop using the clues folder to store your stuff.&rdquo;</p>
+					</div>
+					<div id="clue9" class="clue-col">
+						<img src="ui/clue_9.png">
+						<h2>Background Checks</h2>
+						<p>The Pack Yak has been previously accused of murder.</p>
+					</div>
+					<div id="clue10" class="clue-col">
+						<img src="ui/clue_10.png">
+						<h2>Autopsy Report</h2>
+						<p>The victim apparently suffered from poisoning, strangulation, drowning, and blunt force trauma.</p>
+					</div>
+				</div>
+			</div>
+			<div id="suspects-folder">
+				<div id="suspects">
+					<div id="victim" class="suspect-col">
+						<img src="ui/victim.png">
+						<h2>McGuffin the Puffin</h2>
+						<p>Male, early 20's. Found floating face down in his bathtub with his skull crushed. Background check didn't come up with anything besides a few speeding tickets.</p>
+						<p>&ldquo;Pretty blameless guy by all accounts. He worked part time at a local Panda Express.&rdquo;</p>
+					</div>
+					<div id="suspect1" class="suspect-col">
+						<img src="ui/suspect_1.png">
+						<h2>The Stricken Chicken</h2>
+						<p>A childhood friend of the victim. Seems to be genuinely saddened by his death.</p>
+						<p>&ldquo;I have a final next week, so I was in my room studying until I went straight to bed at 8pm. I didn't hear a thing all day.&rdquo;</p>
+					</div>
+					<div id="suspect2" class="suspect-col">
+						<img src="ui/suspect_2.png">
+						<h2>The Throaty Coyote</h2>
+						<p>The victim's girlfriend for four months.</p>
+						<p>&ldquo;McGuffin was feeling poorly, so we stayed in bed all afternoon. At around 7, he said he was going to go make dinner and have a bath. When he wasn't back by 9, I went to go check on him. That's when I found him dead in the tub. I screamed and called the police immediately!&rdquo;</p>
+					</div>
+					<div id="suspect3" class="suspect-col">
+						<img src="ui/suspect_3.png">
+						<h2>The Borderline Porcupine</h2>
+						<p>A once-friend of the victim. The cause of their falling out was a girl. Claims he saw Throaty Coyote fleeing from the scene of the crime earlier in the day.</p>
+						<p><b><i>Suspect refused to give a statement.</i></b></p>
+					</div>
+					<div id="suspect4" class="suspect-col">
+						<img src="ui/suspect_4.png">
+						<h2>The Pack Yak</h2>
+						<p>An almost total stranger who now regrets his decision to find room-mates on Croakslist.</p>
+						<p>&ldquo;I had dinner in the living room. Around 7, I headed to bed - that's when I saw McGuffin in the hallway walking towards the bathroom. By 9, I was in bed when I heard the most blood-curdling scream from the bathroom.&rdquo;</p>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div id="interrogation">
+		<div class="dialogue"><p></p></div>
+	</div>
+	<div id="dialogue"></div>
+</div>
+
+<div id="preloader">
+	<div id="status">
+		<p><img src="../shared_assets/ui/loading.gif"></p>
+	</div>
+</div>
+
+<div id="cantplay" class="hidden">
+	<h1>Hey there!
+	<br><br>I'm terribly sorry, but your browser isn't modern enough to run this game. I sincerely encourage you to <a href="http://outdatedbrowser.com/">update your browser</a> if you can.
+	<br><br>If not, no worries, and have a great day!</h1>
+</div>
+
+<noscript>
+	<div id="noscript">
+		<h1>Hey there!
+		<br><br>This web game requires Javascript. If you're still interested in playing, disable any script blockers or switch to a device & browser with Javascript support.
+		<br><br>If not, no worries, and have a great day!</h1>
+	</div>
+</noscript>
+	
+</body>
+</html>
