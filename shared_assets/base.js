@@ -6,11 +6,15 @@
  * @param array of strings (image URLs)
  */
 
-function preload() {
-	var images = new Array();
-	for (i = 0; i < preload.arguments.length; i++) {
-		images[i] = new Image();
-		images[i].src = preload.arguments[i];
+function preload(images) {
+	if (!images || images.constructor !== Array) {
+		return false;
+	}
+
+	var loaded = new Array();
+	for (i = 0; i < images.length; i++) {
+		loaded[i] = new Image();
+		loaded[i].src = images[i];
 	}
 }
 
