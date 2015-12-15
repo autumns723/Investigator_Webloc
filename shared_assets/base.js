@@ -121,7 +121,7 @@ function interrogation() {
  */
 
 function dramaticDialogue(id,name,speech,characters) {
-	$("#dialogue").prepend("<div class='dialogue-cover dramatic' id="+id+"><div class='dialogue'><h2>"+name+"</h2><p>"+speech+"</p></div></div>");
+	$("#dialogue").prepend("<div class='dialogue-cover' id="+id+"><div class='dialogue'><h2>"+name+"</h2><p>"+speech+"</p></div></div>");
 
 	for (i = 0; i < characters.length; i++) {
 		$("#"+id).append("<div id="+characters[i]+" class='character'></div>");
