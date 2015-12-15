@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Investigator and the Case of the Chekhov's Gun</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../shared_assets/base.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- JavaScript is kept in the header because it's essential to the game. -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../shared_assets/base.js"></script>
+	<script src="script.js"></script>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../shared_assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-96x96.png" sizes="96x96">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="../shared_assets/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- OpenGraph TODO: -->
+	<meta property="og:title" content="Investigator and the Case of the Chekhov's Gun">
+	<meta property="og:description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick The Bad Luck Duck ">
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://constancecchen.github.io/Investigator/theredherring/opengraph.jpg">
+	<meta property="og:url" content="https://constancecchen.github.io/Investigator/theredherring.html">
+	<meta name="description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick ">
+	<meta name="twitter:site" content="@constancecchen">
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<audio src="../shared_assets/music/act1.mp3" id="bgmusic" autoplay loop> </audio>
+
+<div id="wrapper">
+	<div id="sound-toggle" title="Toggle Sound"></div>
+	<div id="case-file-toggle" title="View Case File"></div>
+	<div id="case-file-bg">
+		<div id="tab-suspects"></div>
+		<div id="tab-clues"></div>
+		<div id="case-file">
+			<div id="clues-folder">
+				<div id="clues">
+					<div id="clue1" class="clue-col">
+						<img src="ui/clue_1.png">
+						<h2>Cause of Death</h2>
+						<p>Cause of death was a gunshot wound to the left temple. No suicide note.</p>
+					</div>
+					<div id="clue2" class="clue-col">
+						<img src="ui/clue_2.png">
+						<h2>Not A Suicide?</h2>
+						<p>The gun was found held in the victim's right hand.</p>
+					</div>
+					<div id="clue3" class="clue-col">
+						<img src="ui/clue_3.png">
+						<h2>Not a Suicide.</h2>
+						<p>No fingerprints were found on the gun... not even the victim's.</p>
+					</div>
+					<div id="clue4" class="clue-col">
+						<img src="ui/clue_4.png">
+						<h2>Antidepressants</h2>
+						<p>Victim was taking medication for mood stabilization.</p>
+					</div>
+					<div id="clue5" class="clue-col">
+						<img src="ui/clue_5.png">
+						<h2>Electricity Bill</h2>
+						<p>An exorbitant monthly energy bill.</p>
+					</div>
+					<div id="clue6" class="clue-col">
+						<img src="ui/clue_6.png">
+						<h2>Angry Customers</h2>
+						<p>Victim had at least one customer with a grudge.</p>
+					</div>
+					<div id="clue7" class="clue-col">
+						<img src="ui/clue_7.png">
+						<h2>All Broken Up</h2>
+						<p>Victim had just ended his "relationship" with The Sleazy Siameasy.</p>
+					</div>
+					<div id="clue8" class="clue-col">
+						<img src="ui/clue_8.png">
+						<h2>Shortchanged</h2>
+						<p>Victim had an argument with his business partner about money.</p>
+					</div>
+					<div id="clue9" class="clue-col">
+						<img src="ui/clue_9.png">
+						<h2>Unhappy Landlord</h2>
+						<p>The victim had been racking up massive electricity bills for his landlord.</p>
+					</div>
+					<div id="clue10" class="clue-col">
+						<img src="ui/clue_10.png">
+						<h2>The Money Motive</h2>
+						<p>The Crabby Tabby really wanted his money back.</p>
+					</div>
+				</div>
+			</div>
+			<div id="suspects-folder">
+				<div id="suspects">
+					<div id="victim" class="suspect-col">
+						<img src="ui/victim.png">
+						<h2>The Bipolar Bear</h2>
+						<p>A polar bear with a record of multiple run-ins with the law. Petty theft, speeding tickets, drug busts. Apparently he got involved in the manufacturing side of crime.</p>
+					</div>
+					<div id="suspect1" class="suspect-col">
+						<img src="ui/suspect_1.png">
+						<h2>The Sleazy Siameasy</h2>
+						<p>An escort barely operating on the side of the law. Exchanged catnip with The Bipolar Bear in exchange for her... ahem... company. Visited the victim on the day of his murder, claiming he was ending their arrangement.</p>
+					</div>
+					<div id="suspect2" class="suspect-col">
+						<img src="ui/suspect_2.png">
+						<h2>The Craven Raven</h2>
+						<p>A business partner in the victim's catnip operation. Found customers and handled the money side of things. Confessed to being caught cheating the The Bipolar Bear out of his share.</p>
+					</div>
+					<div id="suspect3" class="suspect-col">
+						<img src="ui/suspect_3.png">
+						<h2>The Irrelevant Elephant</h2>
+						<p>The victim's landlord. Went into the apartment that day to fix the plumbing. Claims to have seen The Craven Raven and The Crabby Tabby on the property.</p>
+					</div>
+					<div id="suspect4" class="suspect-col">
+						<img src="ui/suspect_4.png">
+						<h2>The Crabby Tabby</h2>
+						<p>An unsatisfied customer of the deceased's. Uses catnip for "medicinal purposes". Claims to have visited The Bipolar Bear around 3pm for a refund, and left after just five minutes.</p>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div id="interrogation">
+		<div class="dialogue"><p></p></div>
+	</div>
+	<div id="dialogue"></div>
+</div>
+
+<div id="preloader">
+	<div id="status">
+		<p><img src="../shared_assets/ui/loading.gif"></p>
+	</div>
+</div>
+
+<div id="cantplay" class="hidden">
+	<h1>Hey there!
+	<br><br>I'm terribly sorry, but your browser isn't modern enough to run this game. I sincerely encourage you to <a href="http://outdatedbrowser.com/">update your browser</a> if you can.
+	<br><br>If not, no worries, and have a great day!</h1>
+</div>
+
+<noscript>
+	<div id="noscript">
+		<h1>Hey there!
+		<br><br>This web game requires Javascript. If you're still interested in playing, disable any script blockers or switch to a device & browser with Javascript support.
+		<br><br>If not, no worries, and have a great day!</h1>
+	</div>
+</noscript>
+	
+</body>
+</html>

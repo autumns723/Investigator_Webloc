@@ -1,0 +1,227 @@
+/* Main Menu */
+
+#mainmenu {
+	background-image: url('backgrounds/mainmenu_bg.jpg');
+}
+#mainmenu_start {
+	top: 54%;
+	left: 38%;
+	width: 25%;
+	height: 40%;
+	background: url('ui/mainmenu_start.png') no-repeat;
+	background-size: contain;
+	-webkit-transition: .4s top ease-out;
+	transition: .4s top ease-out;
+}
+#mainmenu_start:hover {
+	top: 52%;
+}
+
+/* Act 1 */
+
+#act1 {
+	background-image: url('backgrounds/grow_room.jpg');
+}
+#dogtective {
+	bottom: 0%;
+	right: 2%;
+	width: 27%;
+	height: 79%;
+	background-image: url('../shared_assets/characters/dogtective.png');
+}
+#investigator {
+    bottom: -7%;
+	left: 0%;
+	width: 33%;
+	height: 81%;
+	background-image: url('../shared_assets/characters/investigator.png');
+}
+#duck {
+	bottom: 0%;
+	left: 17%;
+	width: 31%;
+	height: 59%;
+	background-image: url('characters/duck.png');
+}
+
+#tattoo {
+	top: 68%;
+	left: 41%;
+	width: 12%;
+	height: 16%;
+}
+#wallet {
+	top: 64%;
+	left: 74%;
+	width: 5%;
+	height: 9%;
+}
+#crates {
+	bottom: 0;
+	right: 0;
+	width: 16%;
+	height: 36%;
+}
+#act1-life-preserver {
+	top: 45%;
+	left: 22%;
+	width: 10%;
+	height: 18%;
+}
+#act1-rope {
+	top: 60%;
+	left: 6%;
+	width: 11%;
+	height: 13%;
+}
+#act1-bottle {
+	top: 3%;
+	left: 76%;
+	width: 5%;
+	height: 9%;
+}
+#act1-boat {
+	top: 26%;
+	left: 0;
+	width: 23%;
+	height: 17%;
+}
+#act1-exit {
+	top: 82%;
+	left: 4%;
+	width: 8%;
+	height: 15%;
+	transform: rotate(41deg);
+	background-image: url('../shared_assets/ui/exit.png');
+}
+/* Act 2 */
+
+#act2 {
+	background-image: url('backgrounds/tavern.jpg');
+}
+
+#seagull {
+	bottom: 0%;
+	right: 3%;
+	width: 32%;
+	height: 63%;
+	background-image: url('characters/seagull.png')
+}
+#seal {
+	bottom: 0%;
+	right: 2%;
+	width: 33%;
+	height: 57%;
+	background-image: url('characters/seal.png')
+}
+#lobster {
+	bottom: 0%;
+	right: 0%;
+	width: 44%;
+	height: 70%;
+	background-image: url('characters/lobster.png')
+}
+#bernese {
+	bottom: 0%;
+	right: 1%;
+	width: 38%;
+	height: 71%;
+	background-image: url('characters/bernese.png')
+}
+
+#talkto-seagull {
+	top: 44%;
+	left: 46%;
+	width: 8%;
+	height: 25%;
+}
+#talkto-seal {
+	top: 46%;
+	left: 78%;
+	width: 14%;
+	height: 41%;
+}
+#talkto-lobster {
+	top: 63%;
+	left: 0;
+	width: 16%;
+	height: 30%;
+}
+#talkto-bernese {
+	top: 14%;
+	left: 14%;
+	width: 13%;
+	height: 28%;
+}
+
+#sardines {
+    top: 67%;
+    left: 38%;
+    width: 6%;
+    height: 6%;
+}
+#brawl-photo {
+	top: 13%;
+	left: 72%;
+	width: 5%;
+	height: 9%;
+}
+#hit-order {
+	bottom: 0;
+	left: 20%;
+	width: 6%;
+	height: 6%;
+}
+#act2-calendar {
+	top: 9%;
+	left: 65%;
+	width: 4%;
+	height: 17%;
+}
+#act2-door {
+	top: 6%;
+	left: 50%;
+	width: 10%;
+	height: 36%;
+}
+#act2-fish {
+	top: 46%;
+	left: 30%;
+	width: 9%;
+	height: 8%;
+}
+#act2-bottles {
+	top: 0;
+	left: 10%;
+	width: 21%;
+	height: 12%;
+}
+
+/* Act 3 */
+
+#act3 {
+	background-image: url('backgrounds/tavern.jpg');
+}
+#realinvestigator {
+	bottom: 0;
+	left: 0;
+    width: 40%;
+    height: 78%;
+	background-image: url('characters/real_investigator.png');
+}
+#crookadile {
+	bottom: 0;
+	right: 0;
+	width: 42%;
+	height: 74%;
+	background-image: url('characters/crookadile.png');
+}
+#dialogue #llama {
+	left: 2%;
+}
+
+/* Ending Credits */
+
+#credits  {
+	background-image: url('backgrounds/credits_bg.jpg');
+}
