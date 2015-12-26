@@ -59,11 +59,12 @@ $(document).ready(function() {
 	/* Main Menu*/
 	function mainmenu() {
 		$("#wrapper").prepend("<div id='mainmenu' class='background'></div>");
-		$("#mainmenu").append("<a id='mainmenu_start' class='interactable'></a>");
+		$("#mainmenu").append("<div id='mainmenu-title' class='ui'></div>");
+		$("#mainmenu").append("<a id='mainmenu-start' class='interactable'></a>");
 		$("#mainmenu").fadeIn(500);
 
 		/* Start Act 1 */
-		$("#mainmenu_start").one("click",function() {
+		$("#mainmenu-start").one("click",function() {
 			$("#mainmenu").fadeOut(500,function() {
 				$("#mainmenu").remove();
 				act1();
@@ -663,11 +664,13 @@ $(document).ready(function() {
 		$("#bgmusic").attr("src", "../shared_assets/music/act3.mp3");
 		if (sound == true) { $("#bgmusic").animate({volume: 0.5}, 1000); }
 
+		$("#wrapper").prepend("<div id='dramatic-backdrop'></div>");
 		$("#wrapper").prepend("<div id='act3' class='background'></div>");
-		$("#act3").append("<div id='talkto-chicken' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-coyote' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-porcupine' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-yak' class='accuse'></div>");
+		$("#act3").append("<div id='talkto-chicken' class='ui'></div>");
+		$("#act3").append("<div id='talkto-coyote' class='ui'></div>");
+		$("#act3").append("<div id='talkto-porcupine' class='ui'></div>");
+		$("#act3").append("<div id='talkto-yak' class='ui'></div>");
+		$("#act3").append("<div id='accuse-murderer' class='ui'></div>");
 		$("#act3").fadeIn(1000);
 
 		dramaticDialogue("end1", "Investigator", "I've called you all here for a very important reason. This is the part where I overdramatically point my finger at the killer!", ["investigator"]);
@@ -676,7 +679,7 @@ $(document).ready(function() {
 		dramaticDialogue("end4", "Investigator", "The Vanilla Chinchilla, I'm going to give you a chance to show off all you've learned. Who was the dastardly murderer?", ["investigator"]);
 
 		$(document).on("click", "#end4", function(){
-			$("#dialogue").fadeOut(function() {
+			$("#dialogue, #dramatic-backdrop").fadeOut(function() {
 				$("#accuse-murderer").fadeIn();
 			});
 		});
@@ -684,9 +687,9 @@ $(document).ready(function() {
 		$("#talkto-chicken,#talkto-coyote,#talkto-porcupine,#talkto-yak").click(function(){
 			$(this).toggleClass("selected");
 		});
-		$("#act3").append("<div id='accuse-murderer' class='accuse'></div>");
 		$("#accuse-murderer").click(function(){
-			$("#dialogue").fadeIn();
+			$("#dialogue, #dramatic-backdrop").fadeIn();
+
 			if ($("#talkto-chicken").hasClass("selected") && $("#talkto-coyote").hasClass("selected") && $("#talkto-porcupine").hasClass("selected") && $("#talkto-yak").hasClass("selected")) {
 				dramaticDialogue("endright", "Investigator", "Well done - you got it! IT WAS ALL OF THEM!", ["investigator"]);
 			}
@@ -697,6 +700,7 @@ $(document).ready(function() {
 			} else {
 				dramaticDialogue("endtryagain1", "Investigator", "The Vanilla Chinchilla, you have to actually point at a suspect.", ["investigator"]);
 				dramaticDialogue("endtryagain2", "The Vanilla Chinchilla", "Whoops!", ["chinchilla"]);
+				$("#dramatic-backdrop").hide();
 			}
 		});
 
@@ -755,9 +759,12 @@ $(document).ready(function() {
 	function credits() {
 		$("#bgmusic").attr("src", "../shared_assets/music/act1.mp3");
 		if (window.sound == true) { $("#bgmusic").animate({volume: 0.5}, 200); }
+
 		$("#wrapper").prepend("<div id='credits' class='background'></div>");
-		$("#credits").append("<div id='audio-credits' class='accuse'><a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
-		$("#credits").append("<div id='special-thanks' class='accuse'>Jeff Clark<br><br>Ryder Hanson<br><br>Kieran Lampert</div>");
+		$("#credits").append("<div id='credits-title' class='ui'></div>");
+		$("#credits").append("<div id='credits-tombstone' class='ui'></div>");
+		$("#credits").append("<div id='audio-credits' class='ui'><img src='../shared_assets/ui/credits_audio.png' alt='Audio Credits'> <br><br> <a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
+		$("#credits").append("<div id='special-thanks' class='ui'><img src='../shared_assets/ui/credits_thanks.png' alt='Special Thanks'> <br><br> Jeff Clark<br><br>Ryder Hanson<br><br>Kieran Lampert</div>");
 		$("#credits").fadeIn(1000);
 	}
 

@@ -59,11 +59,12 @@ $(document).ready(function() {
 	/* Main Menu*/
 	function mainmenu() {
 		$("#wrapper").prepend("<div id='mainmenu' class='background'></div>");
-		$("#mainmenu").append("<a id='mainmenu_start' class='interactable'></a>");
+		$("#mainmenu").append("<div id='mainmenu-title' class='ui'></div>");
+		$("#mainmenu").append("<a id='mainmenu-start' class='interactable'></a>");
 		$("#mainmenu").fadeIn(500);
 
 		/* Start Act 1 */
-		$("#mainmenu_start").one("click",function() {
+		$("#mainmenu-start").one("click",function() {
 			$("#mainmenu").fadeOut(500,function() {
 				$("#mainmenu").remove();
 				act1();
@@ -601,27 +602,31 @@ $(document).ready(function() {
 		});
 	}
 
-	/* Act 3 Transition */
+	/* Act 3 */
 	function act3() {
 		$("#bgmusic").attr("src", "../shared_assets/music/act3.mp3");
 		if (window.sound == true) { $("#bgmusic").animate({volume: 0.5}, 1000); }
+
+		$("#wrapper").prepend("<div id='dramatic-backdrop' style='display: none;'></div>");
 		$("#wrapper").prepend("<div id='act3' class='background'></div>");
-		$("#act3").append("<div id='talkto-siamese' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-raven' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-elephant' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-tabby' class='accuse'></div>");
+		$("#act3").append("<div id='talkto-siamese' class='ui'></div>");
+		$("#act3").append("<div id='talkto-raven' class='ui'></div>");
+		$("#act3").append("<div id='talkto-elephant' class='ui'></div>");
+		$("#act3").append("<div id='talkto-tabby' class='ui'></div>");
+		$("#act3").append("<div id='accuse-murderer' class='ui' style='display: block;'></div>");
 		$("#act3").fadeIn(1000);
 
 		$("#talkto-siamese,#talkto-raven,#talkto-elephant,#talkto-tabby").click(function(){
 			$(this).toggleClass("selected");
 		});
-		$("#act3").append("<div id='accuse-murderer' class='accuse' style='display: block;'></div>");
 		$("#accuse-murderer").click(function(){
-			$("#dialogue").fadeIn();
+			$("#dialogue, #dramatic-backdrop").fadeIn();
+
 			if ($("#talkto-elephant").hasClass("selected") && !$("#talkto-siamese").hasClass("selected") && !$("#talkto-raven").hasClass("selected") && !$("#talkto-tabby").hasClass("selected")) {
 				dramaticDialogue("endright", "Investigator", "Good intuition! Let's break it down...", ["investigator"]);
 			} else if (!$("#talkto-elephant").hasClass("selected") && !$("#talkto-siamese").hasClass("selected") && !$("#talkto-raven").hasClass("selected") && !$("#talkto-tabby").hasClass("selected")) {
-				dramaticDialogue("endempty", "Investigator", "It definitely wasn't a suicide, The Bad Luck Duck. You have to choose a murderer.", ["investigator"]);
+				dramaticDialogue("endtryagain", "Investigator", "It definitely wasn't a suicide, The Bad Luck Duck. You have to choose a murderer.", ["investigator"]);
+				$("#dramatic-backdrop").hide();
 			} else {
 				dramaticDialogue("endwrong", "Investigator", "Not a bad try, The Bad Luck Duck. At first glance, they all seem plausibly guilty.", ["investigator"]);
 			}
@@ -629,12 +634,11 @@ $(document).ready(function() {
 
 		$(document).on("click", "#endright, #endwrong", function(){
 			$("#accuse-murderer").hide();
-			$(".accuse").removeClass("selected").unbind("click");
+			$(".selected").removeClass("selected").unbind("click");
 			restOfAct3();
 		});
 	}
 	function restOfAct3() {
-
 		dramaticDialogue("end3", "Investigator", "First, we can wash out The Sleazy Siameasy. She was never actually at the scene of the crime, as confirmed by our interrogation and witness testimonies. Also, her motive was fairly weak.", ["investigator"]);
 		dramaticDialogue("end4", "The Bad Luck Duck", "People kill for love all the time!", ["duck"]);
 		dramaticDialogue("end5", "Investigator", "Yes, but the Siameasy is far too careful and mercenary about emotion to let it rule her.", ["investigator"]);
@@ -667,8 +671,6 @@ $(document).ready(function() {
 		dramaticDialogue("end32", "Investigator", "Perhaps we just didn't want to acknowledge...", ["investigator"]);
 		dramaticDialogue("theend", "Investigator", "...the elephant in the room.", ["investigator"]);
 
-		$("#dialogue").prepend("<div id='dramatic-backdrop'></div>");
-
 		$(document).on("click", "#theend", function(){
 			$("#bgmusic").animate({volume: 0}, 3000);
 			$("#act3").fadeOut(3000, function(){
@@ -682,9 +684,12 @@ $(document).ready(function() {
 	function credits() {
 		$("#bgmusic").attr("src", "../shared_assets/music/act1.mp3");
 		if (sound == true) { $("#bgmusic").animate({volume: 0.5}, 200); }
+
 		$("#wrapper").prepend("<div id='credits' class='background'></div>");
-		$("#credits").append("<div id='audio-credits' class='accuse'><a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
-		$("#credits").append("<div id='special-thanks' class='accuse'>Armangelo<br><br>Jeff's cheesecakes");
+		$("#credits").append("<div id='credits-title' class='ui'></div>");
+		$("#credits").append("<div id='credits-tombstone' class='ui'></div>");
+		$("#credits").append("<div id='audio-credits' class='ui'><img src='../shared_assets/ui/credits_audio.png' alt='Audio Credits'> <br><br> <a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
+		$("#credits").append("<div id='special-thanks' class='ui'><img src='../shared_assets/ui/credits_thanks.png' alt='Special Thanks'> <br><br> Armangelo <br><br> Jeff's cheesecakes");
 		$("#credits").fadeIn(1000);
 	}
 

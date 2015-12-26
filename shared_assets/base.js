@@ -138,8 +138,6 @@ function dramaticDialogue(id,name,speech,characters) {
 $(document).ready(function() {
 	/**
 	 * Set up sound volume
-	 * TODO: Disable autoplay, and only start the music
-	 * once preloadGame() has completed.
 	 *
 	 * @param none
 	 */
@@ -173,7 +171,7 @@ $(document).ready(function() {
 	 *
 	 * @param click event
 	 */
-	 
+
 	$("#case-file-toggle").click(function() {
 		$("#case-file-bg").fadeIn(500);
 	});
@@ -201,7 +199,6 @@ $(document).ready(function() {
 	var check = document.createElement('div');
 	var shadow = !!(0 + check.style['boxShadow']);
 	if (shadow) { } else {
-		bgmusic.pause();
 		$('#cantplay').removeClass('hidden');
 		window.canplay = false;
 	}
@@ -210,7 +207,6 @@ $(document).ready(function() {
 	if( ua.indexOf("Android") >= 0 ) {
 		var androidversion = parseFloat(ua.slice(ua.indexOf("Android")+8)); 
 		if (androidversion < 4.4) {
-			bgmusic.pause();
 			$('#cantplay').removeClass('hidden');
 			window.canplay = false;
 		}
@@ -218,8 +214,11 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-	$("#status").fadeOut();
-	$("#preloader").delay(350).fadeOut("slow",function() {
-		$("#preloader").remove();
-	});
+	if (window.canplay) {
+		bgmusic.play();
+		$("#preloader-animation").fadeOut();
+		$("#preloader").delay(350).fadeOut("slow",function() {
+			$("#preloader").remove();
+		});
+	}
 });

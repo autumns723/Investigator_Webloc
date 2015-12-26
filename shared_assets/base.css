@@ -74,26 +74,51 @@ a:hover {
 /* Preload screen */
 
 #preloader {
+	display: table;
 	position: fixed;
 	top: 0;
 	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #000;
-	z-index: 99;
-}
-#status {
-	position: relative;
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+	text-align: center;
 	color: #fff;
-	display: table;
+	background-color: #000;
+	z-index: 99;
 }
-#status p {
+#preloader-valign {
 	display: table-cell;
 	vertical-align: middle;
-	text-align: center;
+}
+#preloader-animation {
+	position: relative;
+	width: 9%;
+	margin: 0 auto;
+}
+#preloader-text {
+	width: 100%;
+	height: auto;
+}
+#preloader-moving {
+	position: absolute;
+	top: 60%;
+	right: -30%;
+	width: 45%;
+	height: auto;
+	-webkit-animation: preloader 3s ease infinite;
+	animation: preloader 3s ease infinite;
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
+}
+@-webkit-keyframes preloader {
+    0%  { -webkit-transform: translateX(0); }
+    50% { -webkit-transform: translateX(-210%); }
+	100% { -webkit-transform: translateX(0); }
+}
+@keyframes preloader {
+    0%  { transform: translateX(0); }
+    50% { transform: translateX(-210%); }
+	100% { transform: translateX(0); }
 }
 
 /* Main container */
@@ -128,9 +153,9 @@ a:hover {
 
 /* Interactable elements */
 
-.character, .arrows, .interactable, .accuse {
+.ui, .character, .arrows, .interactable {
 	position: absolute;
-	background-position: center center;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
@@ -424,29 +449,58 @@ a:hover {
 	transform: scale(1.05);
 }
 
-/* Ending Credits */
+/* Menu & Credits */
 
-/* TODO: Create a reusable template for this
-#credits  {
-	background-image: url('backgrounds/credits_bg.jpg');
-}*/
+#mainmenu, #credits {
+	background-image: url('ui/menu_bg.jpg');
+}
+
+#mainmenu-start {
+	background-repeat: no-repeat;
+	background-size: contain;
+	-webkit-transition: .4s transform ease-out;
+	transition: .4s transform ease-out;
+}
+#mainmenu-start:hover {
+	-webkit-transform: translateY(-10%);
+	-ms-transform: translateY(-10%);
+	transform: translateY(-10%);
+}
+
+#credits-title {
+	top: 7%;
+	left: 0;
+	right: 0;
+	width: 73%;
+	height: 20%;
+	margin: 0 auto;
+	background-image: url('ui/credits_title.png');
+}
 #credits a {
 	color: #eee;
 	cursor: url('ui/cursor3.png'), auto;
 }
 #audio-credits, #special-thanks {
-	top: 48%;
+	top: 36%;
 	width: 25%;
 	height: 50%;
 	color: #eee;
 	font-size: 2em;
 	text-align: center;
 }
+#audio-credits {
+	left: 4%;
+}
+#audio-credits img {
+	width: 85%;
+	height: auto;
+}
 #special-thanks {
 	right: 4%;
 }
-#audio-credits {
-	left: 4%;
+#special-thanks img {
+	width: 98%;
+	height: auto;
 }
 
 /* Responsive font sizes */

@@ -61,11 +61,12 @@ $(document).ready(function() {
 	/* Main Menu*/
 	function mainmenu() {
 		$("#wrapper").prepend("<div id='mainmenu' class='background'></div>");
-		$("#mainmenu").append("<a id='mainmenu_start' class='interactable'></a>");
+		$("#mainmenu").append("<div id='mainmenu-title' class='ui'></div>");
+		$("#mainmenu").append("<a id='mainmenu-start' class='interactable'></a>");
 		$("#mainmenu").fadeIn(500);
 
 		/* Start Act 1 */
-		$("#mainmenu_start").one("click",function() {
+		$("#mainmenu-start").one("click",function() {
 			$("#mainmenu").fadeOut(500,function() {
 				$("#mainmenu").remove();
 				act1();
@@ -747,17 +748,19 @@ $(document).ready(function() {
 	function act3() {
 		$("#bgmusic").attr("src", "../shared_assets/music/act3.mp3");
 		if (window.sound == true) { $("#bgmusic").animate({volume: 0.5}, 1000); }
+		$("#wrapper").prepend("<div id='dramatic-backdrop'></div>");
 		$("#wrapper").prepend("<div id='act3' class='background'></div>");
-		$("#act3").append("<div id='talkto-seagull' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-seal' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-lobster' class='accuse'></div>");
-		$("#act3").append("<div id='talkto-bernese' class='accuse'></div>");
+		$("#act3").append("<div id='talkto-seagull' class='ui'></div>");
+		$("#act3").append("<div id='talkto-seal' class='ui'></div>");
+		$("#act3").append("<div id='talkto-lobster' class='ui'></div>");
+		$("#act3").append("<div id='talkto-bernese' class='ui'></div>");
 		$("#act3").fadeIn(1000);
+
 		dramaticDialogue("end1", "Investigator", "I've darkened the room for a very important reason. This is the part where I overdramatically point my finger at the killer!", ["investigator"]);
 		dramaticDialogue("end2", "Investigator", "As always, I like to give my sidekicks a chance to show me up. The Trauma Llama, do you want to take a crack at it first?", ["investigator"]);
 
 		$(document).on("click", "#end2", function(){
-			$("#dialogue").fadeOut(function() {
+			$("#dialogue, #dramatic-backdrop").fadeOut(function() {
 				$("#accuse-murderer").fadeIn();
 			});
 		});
@@ -765,9 +768,10 @@ $(document).ready(function() {
 		$("#talkto-seagull,#talkto-seal,#talkto-lobster,#talkto-bernese").click(function(){
 			$(this).toggleClass("selected");
 		});
-		$("#act3").append("<div id='accuse-murderer' class='accuse'></div>");
+		$("#act3").append("<div id='accuse-murderer' class='ui'></div>");
 		$("#accuse-murderer").click(function(){
-			$("#dialogue").fadeIn();
+			$("#dialogue, #dramatic-backdrop").fadeIn();
+
 			if ($("#talkto-seagull").hasClass("selected") || $("#talkto-seal").hasClass("selected") || $("#talkto-lobster").hasClass("selected") || $("#talkto-bernese").hasClass("selected")) {
 				dramaticDialogue("endwrong", "Investigator", "Haha. An interesting thought, but unfortunately incorrect. No, I'm afraid I fooled you! There was no murderer; the Sunk Skunk's death was a tragic &mdash;", ["investigator"]);
 			} else {
@@ -822,8 +826,10 @@ $(document).ready(function() {
 		$("#bgmusic").attr("src", "../shared_assets/music/act1.mp3");
 		if (sound == true) { $("#bgmusic").animate({volume: 0.5}, 200); }
 		$("#wrapper").prepend("<div id='credits' class='background'></div>");
-		$("#credits").append("<div id='audio-credits' class='accuse'><a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
-		$("#credits").append("<div id='special-thanks' class='accuse'><a href='http://markaaronbarrett.wix.com/artdesign#!art/c199t' target='_blank'>Mark Barett &mdash; Character Art</a></div>");
+		$("#credits").append("<div id='credits-title' class='ui'></div>");
+		$("#credits").append("<div id='credits-tombstone' class='ui'></div>");
+		$("#credits").append("<div id='audio-credits' class='ui'><img src='../shared_assets/ui/credits_audio.png' alt='Audio Credits'> <br><br> <a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
+		$("#credits").append("<div id='special-thanks' class='ui'><img src='../shared_assets/ui/credits_thanks.png' alt='Special Thanks'> <br><br> <a href='http://markaaronbarrett.wix.com/artdesign#!art/c199t' target='_blank'>Mark Barett &mdash; Character Art</a></div>");
 		$("#credits").fadeIn(1000);
 	}
 
