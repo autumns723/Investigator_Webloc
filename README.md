@@ -11,8 +11,9 @@ The Investigator is an Alligator who Investigates crime, alongside various faith
 They're created in pure DOM (CSS/HTML/jQuery) because I'm the hackiest of hacks who ever hacked. Also, because I create the games mostly solo, which means all the writing/art/tech in under 3 days. My goal is for iterative improvement every Ludum Dare.
 
 ## To Do's and list of code improvements on my agenda:
-- Solution for overflowing text in clues/suspects folder + (responsive pass for mobile)
+- Add a "Play All" or "View the website" CTA link to the ending credit screens
+- Investigate using PhoneGap or similar to convert these to Android/iPhone apps
 - Investigate a more animation-friendly library such as Zepto or or Velocity.js, to better handle fade ins and fade outs
-- Investigate a more performant alternative to append()s and prepend()s
+- Investigate a more performant alternative to append and prepend
 - Investigate a better way of marking 'already-read' dialogue branches, perhaps by utilizing native a:visited, or localstorage
-- Far future - Investigate using a more applicable framework, such as Phaser or HTML5 canvas.
+- Far future - Investigate using a more applicable framework, such as Phaser or HTML5 canvas
