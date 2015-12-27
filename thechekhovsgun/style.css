@@ -10,10 +10,10 @@
 	background-image: url('ui/mainmenu_title.png');
 }
 #mainmenu-start {
-	top: 54%;
+	top: 58%;
 	left: 38%;
-	width: 25%;
-	height: 40%;
+	width: 24%;
+	height: 32%;
 	background-image: url('ui/mainmenu_start.png');
 }
 

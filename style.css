@@ -166,7 +166,7 @@ body {
 .case {
 	display: inline-block;
 	max-width: 400px;
-    margin: 0 30px;
+    margin: 0 30px 30px;
     padding: 30px 10px;
 	line-height: 0;
     background-image: url('small_case_folders.png');
