@@ -1,0 +1,149 @@
+html, body {
+	position: relative;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+div {
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.slideshow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	cursor: url('../shared_assets/ui/cursor3.png'), auto;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	will-change: opacity;
+}
+
+.slide-1 {
+	z-index: 99;
+	background-image: url('title.png');
+	background-size: 60% auto;
+	background-position: center 10%;
+	-webkit-animation: slide-1 20s ease-in-out infinite;
+	animation: slide-1 20s ease-in-out infinite;
+}
+.investigator {
+	position: absolute;
+	bottom: 0%;
+	left: 1%;
+	width: 27%;
+	height: 66%;
+	background-image: url('../shared_assets/characters/investigator.png');
+}
+.dogtective {
+	position: absolute;
+	bottom: 0%;
+	right: -1%;
+	width: 24%;
+	height: 69%;
+	background-image: url('../shared_assets/characters/dogtective.png');
+}
+.bobbycat {
+	position: absolute;
+	bottom: 0%;
+	right: 15%;
+	width: 21%;
+	height: 60%;
+	background-image: url('../shared_assets/characters/bobbycat.png');
+}
+.chinchilla {
+	position: absolute;
+	bottom: 0%;
+	left: 16%;
+	width: 20%;
+	height: 37%;
+	background-image: url('../theunconventionalweapon/characters/vanilla_chinchilla.png');
+}
+.cta {
+	position: absolute;
+	top: 64%;
+	right: 0;
+	left: 0;
+	width: 25%;
+	height: 21%;
+	margin: 0 auto;
+	background-image: url('cta.png');
+	background-position: center;
+	-webkit-transition: -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out;
+}
+.cta:hover {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.slide-2 {
+	background-image: url('tagline.png');
+	background-size: 80% auto;
+	background-position: center;
+	opacity: 0;
+	-webkit-animation: slide-2 20s ease-in-out infinite;
+	animation: slide-2 20s ease-in-out infinite;
+}
+
+.slide-3 {
+	background-image: url('description.png');
+	background-size: auto 90%;
+	background-position: center;
+	opacity: 0;
+	-webkit-animation: slide-3 20s ease-in-out infinite;
+	animation: slide-3 20s ease-in-out infinite;
+}
+
+.slide-4 {
+	background-image: url('website.png');
+	background-size: 30em auto;
+	background-position: center;
+	opacity: 0;
+	-webkit-animation: slide-4 20s ease-in-out infinite;
+	animation: slide-4 20s ease-in-out infinite;
+}
+
+@keyframes slide-1 {
+	0%   { opacity: 1; }
+	21%  { opacity: 1; }
+	25%  { opacity: 0; }
+	95%  { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes slide-2 {
+	0%   { opacity: 0; }
+	25%  { opacity: 0; }
+	29%  { opacity: 1; }
+	44%  { opacity: 1; }
+	48%  { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+@keyframes slide-3 {
+	0%   { opacity: 0; }
+	48%  { opacity: 0; }
+	52%  { opacity: 1; }
+	78%  { opacity: 1; }
+	82%  { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+@keyframes slide-4 {
+	0%   { opacity: 0; }
+	82%  { opacity: 0; }
+	86%  { opacity: 1; }
+	96%  { opacity: 1; }
+	100% { opacity: 0; }
+}
