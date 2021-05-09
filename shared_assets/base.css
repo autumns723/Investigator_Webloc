@@ -8,13 +8,13 @@
 @font-face {
 	font-family: 'New Era Casual';
 	src: url('fonts/NewEraCasualBold.woff2') format('woff2'),
-	     url('fonts/NewEraCasualBold.woff') format('woff')
+	     url('fonts/NewEraCasualBold.woff') format('woff');
 	font-weight: bold;
 }
 @font-face {
 	font-family: 'New Era Casual';
 	src: url('fonts/NewEraCasualItalic.woff2') format('woff2'),
-	     url('fonts/NewEraCasualItalic.woff') format('woff')
+	     url('fonts/NewEraCasualItalic.woff') format('woff');
 	font-style: italic;
 }
 
@@ -28,6 +28,10 @@ body {
 	color: #470a01;
 	background: #000;
 	overflow: hidden;
+}
+body:lang(ja-jp){
+	font-family: 'Kosugi Maru', sans-serif;
+	font-size: 11px;
 }
 a, img, a img {
 	border: 0;
@@ -310,6 +314,14 @@ a:hover {
 	-webkit-transition: .4s opacity;
 	transition: .4s opacity;
 }
+#case-file-toggle:lang(es){
+	width: 8%;
+	background: url('ui/case_toggle-es.png') no-repeat center right;
+}
+#case-file-toggle:lang(ja-jp){
+	width: 8%;
+	background: url('ui/case_toggle-ja.png') no-repeat center right;
+}
 #case-file-bg > div, #case-file > div {
 	position: absolute;
 	background-position: center center;
@@ -345,6 +357,12 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	background-image: url('ui/header_clues.png');
+}
+#clues-folder:lang(es){
+	background-image: url('ui/header_clues-es.png');
+}
+#clues-folder:lang(ja-jp){
+	background-image: url('ui/header_clues-ja.png');
 }
 #clues {
 	position: absolute;
@@ -387,6 +405,12 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	background-image: url('ui/header_suspects.png');
+}
+#suspects-folder:lang(es) {
+	background-image: url('ui/header_suspects-es.png');
+}
+#suspects-folder:lang(ja-jp) {
+	background-image: url('ui/header_suspects-ja.png');
 }
 #suspects {
 	position: absolute;
@@ -443,6 +467,12 @@ a:hover {
 	-webkit-transition: .4s all ease;
 	transition: .4s all ease;
 }
+#accuse-murderer:lang(es){
+	background-image: url('ui/accusemurderer_btn-es.png');
+}
+#accuse-murderer:lang(ja-jp){
+	background-image: url('ui/accusemurderer_btn-ja.png');
+}
 #accuse-murderer:hover {
 	-webkit-transform: scale(1.05);
 	-ms-transform: scale(1.05);
@@ -475,6 +505,12 @@ a:hover {
 	height: 20%;
 	margin: 0 auto;
 	background-image: url('ui/credits_title.png');
+}
+#credits-title:lang(es){
+	background-image: url('ui/credits_title-es.png');
+}
+#credits-title:lang(ja-jp){
+	background-image: url('ui/credits_title-ja.png');
 }
 #credits a {
 	color: #eee;

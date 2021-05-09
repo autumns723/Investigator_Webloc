@@ -26,7 +26,7 @@ function preload(images) {
  */
  
 function dialogue(name,speech,clue) {
-	$("#dialogue").prepend("<div class='dialogue-cover'><div class='dialogue'><h2>"+name+"</h2><p>"+speech+"</p></div></div>");
+	$("#dialogue").prepend("<div class='dialogue-cover'><div class='dialogue'><h2>"+ _(name) +"</h2><p>"+ _(speech) +"</p></div></div>");
 
 	$("#dialogue").find("div.dialogue-cover").one("click", function(){
 		$(this).children("div.dialogue").fadeOut(function() {
@@ -98,7 +98,7 @@ function showCaseFolder(clueID) {
 
 function interrogation() {
 	for (i = 0; i < interrogation.arguments.length; i+=2) {
-		$("#interrogation").find("p").append("<a id="+interrogation.arguments[i]+">Q: "+interrogation.arguments[i+1]+"</a>");
+		$("#interrogation").find("p").append("<a id="+_(interrogation.arguments[i])+_(">Q: ")+_(interrogation.arguments[i+1])+"</a>");
 	}
 
 	$("#end-interrogation").click(function(){
@@ -121,7 +121,7 @@ function interrogation() {
  */
 
 function dramaticDialogue(id,name,speech,characters) {
-	$("#dialogue").prepend("<div class='dialogue-cover' id="+id+"><div class='dialogue'><h2>"+name+"</h2><p>"+speech+"</p></div></div>");
+	$("#dialogue").prepend("<div class='dialogue-cover' id="+id+"><div class='dialogue'><h2>"+_(name)+"</h2><p>"+_(speech)+"</p></div></div>");
 
 	for (i = 0; i < characters.length; i++) {
 		$("#"+id).append("<div id="+characters[i]+" class='character'></div>");
