@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>捜査官と型破りな武器の事例</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="../shared_assets/base.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
+	<!-- JavaScript is kept in the header because it's essential to the game. -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../shared_assets/base.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript" src="../shared_assets/24ways.js"></script>
+	<script type="text/javascript" src="translations/theunconventionalweapon_ja-JP.js"></script>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../shared_assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-96x96.png" sizes="96x96">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="../shared_assets/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- OpenGraph -->
+	<meta property="og:title" content="Investigator and the Case of the Unconventional Weapon">
+	<meta property="og:description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick the Vanilla Chinchilla look into the murder of McGuffin the Puffin, found floating face down in the bathtub with a bloodied toilet tank lid on the floor.">
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://constancecchen.github.io/Investigator/theunconventionalweapon/opengraph.jpg">
+	<meta property="og:url" content="https://constancecchen.github.io/Investigator/theunconventionalweapon/">
+	<meta name="description" content="ケースを調査するワニであるInvestigatorについてのポイントアンドクリックのフーダニット。捜査官と彼の相棒であるバニラチンチラは、床に血まみれのトイレタンクの蓋が付いた浴槽にうつ伏せに浮かんでいるのを見つけた、マックガフィンザパフィンの殺害を調べます。">
+	<meta name="twitter:site" content="@constancecchen">
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<audio src="../shared_assets/music/act1.mp3" id="bgmusic" loop> </audio>
+
+<div id="wrapper">
+	<div id="sound-toggle" title="トグルサウンド"></div>
+	<div id="case-file-toggle" title="ケースファイルを表示"></div>
+	<div id="case-file-bg">
+		<div id="tab-suspects"></div>
+		<div id="tab-clues"></div>
+		<div id="case-file">
+			<div id="clues-folder">
+				<div id="clues">
+					<div id="clue1" class="clue-col"><img src="ui/clue_1.png"><h2>トイレタンク蓋</h2>
+						<p>殺人兵器。犠牲者の血がついたひび割れ。</p>
+					</div>
+					<div id="clue2" class="clue-col"><img src="ui/clue_2.png"><h2>首あざ</h2>
+						<p>絞扼マーク。プリントの形成は爪を示しています。</p>
+					</div>
+					<div id="clue3" class="clue-col"><img src="ui/clue_3.png"><h2>浸した羽</h2>
+						<p>浴槽の水から、被害者の色と一致しない2枚の羽が見つかりました。</p>
+					</div>
+					<div id="clue4" class="clue-col"><img src="ui/clue_4.png"><h2>壊れたクイル</h2>
+						<p>開いたトイレのタンクの中に羽ペンの破片が見つかりました。</p>
+					</div>
+					<div id="clue5" class="clue-col"><img src="ui/clue_5.png"><h2>手紙を分割</h2>
+						<p>彼が別れたいと思ったすべての理由をリストした、亡くなった犠牲者によって書かれた愚かな手紙。</p>
+					</div>
+					<div id="clue6" class="clue-col"><img src="ui/clue_6.png"><h2>支払期日</h2>
+						<p>被害者が彼にお金を借りていることを示す、打たれた鶏からのコレクション通知。</p>
+					</div>
+					<div id="clue7" class="clue-col"><img src="ui/clue_7.png"><h2>古い写真</h2>
+						<p>手をつないでいるスローティコヨーテとボーダーラインヤマアラシの古い写真。</p>
+					</div>
+					<div id="clue8" class="clue-col"><img src="ui/clue_8.png"><h2>コップ1杯の水</h2>
+						<p>「バニラチンチラ、手がかりフォルダを使って物を保管するのはやめましょう。」</p>
+					</div>
+					<div id="clue9" class="clue-col"><img src="ui/clue_9.png"><h2>バックグラウンドチェック</h2>
+						<p>パックヤクは以前に殺人罪で告発されています。</p>
+					</div>
+					<div id="clue10" class="clue-col"><img src="ui/clue_10.png"><h2>剖検レポート</h2>
+						<p>犠牲者は明らかに中毒、絞殺、溺死、そして鈍い力による外傷に苦しんでいた。</p>
+					</div>
+				</div>
+			</div>
+			<div id="suspects-folder">
+				<div id="suspects">
+					<div id="victim" class="suspect-col"><img src="ui/victim.png"><h2>ツノメドリのマクガフィン</h2>
+						<p>男性、20代前半。彼の頭蓋骨が押しつぶされた状態で彼の浴槽にうつ伏せに浮かんでいるのを見つけました。身元調査では、いくつかのスピード違反切符以外は何も思いつきませんでした。</p>
+						<p>「誰から聞いても、かなり非難のない男。彼は地元のパンダエクスプレスでバイトで働いていました。」</p>
+					</div>
+					<div id="suspect1" class="suspect-col"><img src="ui/suspect_1.png"><h2>打たれた鶏</h2>
+						<p>犠牲者の幼なじみ。彼の死に心から悲しんでいるようだ。</p>
+						<p>「来週は決勝戦があるので、午後8時にまっすぐ寝るまで勉強していました。一日中何も聞こえませんでした。」</p>
+					</div>
+					<div id="suspect2" class="suspect-col"><img src="ui/suspect_2.png"><h2>スローティコヨーテ</h2>
+						<p>被害者の彼女は4か月間。</p>
+						<p>「マクガフィンは気分が悪いので、午後中ずっとベッドにいた。７時ごろ、夕食を作って風呂に入ると言った。彼が9時までに戻ってこなかったとき、私は彼を見に行った。その時、私は彼が浴槽で死んでいるのを見つけた。私は悲鳴を上げてすぐに警察に通報した！」</p>
+					</div>
+					<div id="suspect3" class="suspect-col"><img src="ui/suspect_3.png"><h2>ボーダーラインヤマアラシ</h2>
+						<p>犠牲者のかつての友人。彼らの脱落の原因は女の子でした。彼は、スローティコヨーテがその日の早い段階で犯罪現場から逃げるのを見たと主張しています。</p>
+						<p><b><i>容疑者は声明を出すことを拒否した。</i></b></p>
+					</div>
+					<div id="suspect4" class="suspect-col"><img src="ui/suspect_4.png"><h2>パックヤク</h2>
+						<p>クロックスリストでルームメイトを見つけるという彼の決定を今では後悔している完全な見知らぬ人。</p>
+						<p>「私は居間で夕食をとった。７時ごろ、私はベッドに向かった。その時、廊下でマクガフィンがお風呂に向かって歩いているのを見た。9時までに、バスルームから最も叫び声が聞こえたとき、私はベッドにいた。」</p>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div id="interrogation">
+		<div class="dialogue"><p></p></div>
+	</div>
+	<div id="dialogue"></div>
+</div>
+
+<div id="preloader">
+	<div id="preloader-valign">
+		<div id="preloader-animation">
+			<img id="preloader-text" src="../shared_assets/ui/loading-ja.png" alt="読み込み中"> <img id="preloader-moving" src="../shared_assets/ui/cursor3.png">
+		</div>
+	</div>
+</div>
+
+<div id="cantplay" class="hidden">
+	<h1>ちょっと、そこ！
+	<br><br>大変申し訳ありませんが、お使いのブラウザはこのゲームを実行するのに十分なほど最新ではありません。可能であれば<a href="http://outdatedbrowser.com/">、ブラウザ</a>を更新することを心からお勧めします。
+	<br><br>そうでなければ、心配する必要はありません、そして素晴らしい一日を！</h1>
+</div>
+
+<noscript>
+	<div id="noscript">
+		<h1>ちょっと、そこ！
+		<br><br>このWebゲームにはJavascriptが必要です。それでも再生に興味がある場合は、スクリプトブロッカーを無効にするか、Javascriptをサポートするデバイスとブラウザに切り替えてください。
+		<br><br>そうでなければ、心配する必要はありません、そして素晴らしい一日を！</h1>
+	</div>
+</noscript>
+	
+</body>
+</html>

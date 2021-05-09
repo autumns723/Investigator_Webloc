@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Investigador y el caso del arma no convencional</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="../shared_assets/base.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- JavaScript is kept in the header because it's essential to the game. -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../shared_assets/base.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript" src="../shared_assets/24ways.js"></script>
+	<script type="text/javascript" src="translations/theunconventionalweapon_es.js"></script>
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../shared_assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../shared_assets/favicons/favicon-96x96.png" sizes="96x96">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="../shared_assets/favicons/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- OpenGraph -->
+	<meta property="og:title" content="Investigator and the Case of the Unconventional Weapon">
+	<meta property="og:description" content="A point and click whodunnit about Investigator, an alligator who investigates cases. Investigator and his sidekick the Vanilla Chinchilla look into the murder of McGuffin the Puffin, found floating face down in the bathtub with a bloodied toilet tank lid on the floor.">
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://constancecchen.github.io/Investigator/theunconventionalweapon/opengraph.jpg">
+	<meta property="og:url" content="https://constancecchen.github.io/Investigator/theunconventionalweapon/">
+	<meta name="description" content="Una novela de apuntar y hacer clic sobre Investigator, un caimán que investiga casos. El investigador y su compinche Vanilla Chinchilla investigan el asesinato de McGuffin el frailecillo, encontrado flotando boca abajo en la bañera con la tapa del tanque del inodoro ensangrentada en el piso.">
+	<meta name="twitter:site" content="@constancecchen">
+	<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<audio src="../shared_assets/music/act1.mp3" id="bgmusic" loop> </audio>
+
+<div id="wrapper">
+	<div id="sound-toggle" title="Alternar sonido"></div>
+	<div id="case-file-toggle" title="Ver archivo de caso"></div>
+	<div id="case-file-bg">
+		<div id="tab-suspects"></div>
+		<div id="tab-clues"></div>
+		<div id="case-file">
+			<div id="clues-folder">
+				<div id="clues">
+					<div id="clue1" class="clue-col"><img src="ui/clue_1.png"><h2>Tapa del tanque de inodoro</h2>
+						<p>El arma homicida. Agrietado, con la sangre de la víctima.</p>
+					</div>
+					<div id="clue2" class="clue-col"><img src="ui/clue_2.png"><h2>Moretones en el cuello</h2>
+						<p>Marcas de estrangulamiento. La formación de las huellas indica garras.</p>
+					</div>
+					<div id="clue3" class="clue-col"><img src="ui/clue_3.png"><h2>Plumas empapadas</h2>
+						<p>En el agua de la bañera se encontraron dos plumas que no coincidían con el color de la víctima.</p>
+					</div>
+					<div id="clue4" class="clue-col"><img src="ui/clue_4.png"><h2>Plumas rotas</h2>
+						<p>Se encontraron pedazos de púas dentro del tanque del inodoro abierto.</p>
+					</div>
+					<div id="clue5" class="clue-col"><img src="ui/clue_5.png"><h2>Carta de ruptura</h2>
+						<p>Una sórdida carta escrita por la difunta víctima, enumerando todas las razones por las que quería romper.</p>
+					</div>
+					<div id="clue6" class="clue-col"><img src="ui/clue_6.png"><h2>Pago de la factura vencida</h2>
+						<p>Un aviso del Pollo Golpeado, que indica que la víctima le debe dinero.</p>
+					</div>
+					<div id="clue7" class="clue-col"><img src="ui/clue_7.png"><h2>Viejo cuadro</h2>
+						<p>Una vieja foto del Coyote Garganta y el Puercoespín Límite tomados de la mano.</p>
+					</div>
+					<div id="clue8" class="clue-col"><img src="ui/clue_8.png"><h2>Vaso de agua</h2>
+						<p>"La Vainilla Chinchilla, deja de usar la carpeta de pistas para almacenar tus cosas".</p>
+					</div>
+					<div id="clue9" class="clue-col"><img src="ui/clue_9.png"><h2>Verificaciones de antecedentes</h2>
+						<p>El Paquete Yak ha sido previamente acusado de asesinato.</p>
+					</div>
+					<div id="clue10" class="clue-col"><img src="ui/clue_10.png"><h2>Informe de autopsia</h2>
+						<p>La víctima sufrió envenenamiento, estrangulamiento, ahogamiento y traumatismo.</p>
+					</div>
+				</div>
+			</div>
+			<div id="suspects-folder">
+				<div id="suspects">
+					<div id="victim" class="suspect-col"><img src="ui/victim.png"><h2>McGuffin el Frailecillo</h2>
+						<p>Hombre, 20 años. Encontrado flotando boca abajo en su bañera con el cráneo aplastado. La verificación de antecedentes no arrojó nada más que algunas multas por exceso de velocidad.</p>
+						<p>“Un tipo bastante inocente en todos los sentidos. Trabajó a tiempo parcial en un Panda Express local ".</p>
+					</div>
+					<div id="suspect1" class="suspect-col"><img src="ui/suspect_1.png"><h2>El Pollo Golpeado</h2>
+						<p>Un amigo de la infancia de la víctima. Parece estar realmente entristecido por su muerte.</p>
+						<p>“Tengo una última semana, así que estuve en mi habitación estudiando hasta que me fui directamente a la cama a las 8 pm. No escuché nada en todo el día ".</p>
+					</div>
+					<div id="suspect2" class="suspect-col"><img src="ui/suspect_2.png"><h2>El Coyote Garganta</h2>
+						<p>La novia de la víctima durante cuatro meses.</p>
+						<p>“McGuffin se sentía mal, así que nos quedamos en la cama toda la tarde. Alrededor de las 7, dijo que iba a hacer la cena y tomar un baño. Cuando no había vuelto a las 9, fui a ver cómo estaba. Fue entonces cuando lo encontré muerto en la bañera. ¡Grité y llamé a la policía de inmediato! "</p>
+					</div>
+					<div id="suspect3" class="suspect-col"><img src="ui/suspect_3.png"><h2>El Puercoespín Límite</h2>
+						<p>Una vez amigo de la víctima. La causa de su pelea fue una niña. Afirma que vio a Coyote Garganta huyendo de la escena del crimen más temprano en el día.</p>
+						<p><b><i>El sospechoso se negó a dar una declaración.</i></b></p>
+					</div>
+					<div id="suspect4" class="suspect-col"><img src="ui/suspect_4.png"><h2>El Paquete Yak</h2>
+						<p>Un extraño casi total que ahora lamenta su decisión de encontrar compañeros de habitación en Croakslist.</p>
+						<p>“Cené en la sala de estar. Alrededor de las 7, me dirigí a la cama, fue entonces cuando vi a McGuffin en el pasillo caminando hacia el baño. A las 9, estaba en la cama cuando escuché el grito en el baño ".</p>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	<div id="interrogation">
+		<div class="dialogue"><p></p></div>
+	</div>
+	<div id="dialogue"></div>
+</div>
+
+<div id="preloader">
+	<div id="preloader-valign">
+		<div id="preloader-animation">
+			<img id="preloader-text" src="../shared_assets/ui/loading-es.png" alt="Cargando"> <img id="preloader-moving" src="../shared_assets/ui/cursor3.png">
+		</div>
+	</div>
+</div>
+
+<div id="cantplay" class="hidden">
+	<h1>¡Hola!
+	<br><br>Lo siento mucho, pero su navegador no es lo suficientemente moderno para ejecutar este juego. Le animo sinceramente a que <a href="http://outdatedbrowser.com/">actualice su navegador</a> si puede.
+	<br><br>Si no, no te preocupes, ¡y que tengas un gran día!</h1>
+</div>
+
+<noscript>
+	<div id="noscript">
+		<h1>¡Hola!
+		<br><br>Este juego web requiere Javascript. Si todavía está interesado en jugar, desactive cualquier bloqueador de secuencias de comandos o cambie a un dispositivo y navegador con soporte Javascript.
+		<br><br>Si no, no te preocupes, ¡y que tengas un gran día!</h1>
+	</div>
+</noscript>
+	
+</body>
+</html>

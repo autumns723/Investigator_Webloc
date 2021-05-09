@@ -499,7 +499,7 @@ $(document).ready(function() {
 				$('#interrogation').fadeOut(400,function() {
 					conversation(
 						"The Throaty Coyote", "Well, we used to date.", '',
-						"Inspector", "Yes, I managed to deduce that.", '',
+						"Investigator", "Yes, I managed to deduce that.", '',
 						"The Throaty Coyote", "We just weren't working out, so I broke up with him. I guess he was more hung up on me than I thought, though, 'cause he went totally crazy.", '',
 						"The Throaty Coyote", "Maybe I shouldn't have moved in and started seeing his roommate.", '',
 						"The Vanilla Chinchilla", "It's really not the best idea I've ever heard.", ''
@@ -511,7 +511,7 @@ $(document).ready(function() {
 				$('#interrogation').fadeOut(400,function() {
 					conversation(
 						"The Throaty Coyote", "Wh-where did you find that!?", '',
-						"Inspector", "In a rubbish bin.", '',
+						"Investigator", "In a rubbish bin.", '',
 						"The Throaty Coyote", "W-well that's where it belongs, clearly! My McGuffin would never break up with me! E-<i>ever!</i> The very idea! How dare you!", '',
 						"The Throaty Coyote", "Besides, would a dame as good-looking as me get broken up with? I think not! <i>I</i> am the one who breaks up with others!", ''
 					);
@@ -545,11 +545,11 @@ $(document).ready(function() {
 				$('#interrogation').fadeOut(400,function() {
 					conversation(
 						"The Borderline Porcupine", "...", '',
-						"Inspector", "How about now?", '',
+						"Investigator", "How about now?", '',
 						"The Borderline Porcupine", "...", '',
-						"Inspector", "Nice weather we've been having lately.", '',
+						"Investigator", "Nice weather we've been having lately.", '',
 						"The Borderline Porcupine", "...", '',
-						"Inspector", "Alright, I get the hint.", ''
+						"Investigator", "Alright, I get the hint.", ''
 					);
 				});
 			});
@@ -558,7 +558,7 @@ $(document).ready(function() {
 				$('#interrogation').fadeOut(400,function() {
 					conversation(
 						"The Borderline Porcupine", "We knew each other through McGuffin, but we weren't really friends or anything. He seemed kinda stuffy. And that's all you're getting out of me, copper!", '',
-						"Inspector", "...", ''
+						"Investigator", "...", ''
 					);
 				});
 			});
@@ -567,7 +567,7 @@ $(document).ready(function() {
 				$('#interrogation').fadeOut(400,function() {
 					conversation(
 						"The Borderline Porcupine", "THAT SCURVY TART!", '',
-						"Inspector", "Please, Mr. Porcupine, just the facts.", '',
+						"Investigator", "Please, Mr. Porcupine, just the facts.", '',
 						"The Borderline Porcupine", "FACTS! There's nothing remotely factual or logical about that woman's heart! She left me saying she'd met someone else. Little did I know it was for a man who I used to once call a brother!", '',
 						"The Borderline Porcupine", "She also told me I shouted too much! ME!", '',
 						"The Vanilla Chinchilla", "I think I've gone slightly deaf in my left ear.", ''
@@ -604,7 +604,7 @@ $(document).ready(function() {
 						"The Pack Yak", "I find the Borderline Porcupine to be quite objectionable. He picks arguments at the drop of a hat. I avoid all discourse with him.", '',
 						"The Pack Yak", "The Throaty Coyote I can converse with civilly. However, we have very little in common, and I have always been a bit of a gruff bachelor.", '',
 						"The Pack Yak", "I have no real impression of the Stricken Chicken or the late McGuffin the Puffin. They were both retiring fellows and kept to themselves, as my mother always says gentlemen should.", '',
-						"Inspector", "Thank you, Mr. Yak.", ''
+						"Investigator", "Thank you, Mr. Yak.", ''
 					);
 				});
 			});
@@ -763,8 +763,8 @@ $(document).ready(function() {
 		$("#wrapper").prepend("<div id='credits' class='background'></div>");
 		$("#credits").append("<div id='credits-title' class='ui'></div>");
 		$("#credits").append("<div id='credits-tombstone' class='ui'></div>");
-		$("#credits").append("<div id='audio-credits' class='ui'><img src='../shared_assets/ui/credits_audio.png' alt='Audio Credits'> <br><br> <a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
-		$("#credits").append("<div id='special-thanks' class='ui'><img src='../shared_assets/ui/credits_thanks.png' alt='Special Thanks'> <br><br> Jeff Clark<br><br>Ryder Hanson<br><br>Kieran Lampert</div>");
+		$("#credits").append("<div id='audio-credits' class='ui'><img src='../shared_assets/ui/credits_audio" + _("locale") + ".png' alt='Audio Credits'> <br><br> <a href='http://opengameart.org/content/a-la-poursuite-dune-ombre-du-pass%C3%A9' target='_blank'>Dogers &mdash; A la poursuite d'une ombre du passé</a> <br><br> <a href='http://opengameart.org/content/the-plot-thickens' target='_blank'>el-corleo &mdash; The Plot Thickens</a></div>");
+		$("#credits").append("<div id='special-thanks' class='ui'><img src='../shared_assets/ui/credits_thanks" + _("locale") + ".png' alt='Special Thanks'> <br><br> Jeff Clark<br><br>Ryder Hanson<br><br>Kieran Lampert</div>");
 		$("#credits").fadeIn(1000);
 	}
 

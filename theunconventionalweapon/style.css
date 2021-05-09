@@ -9,12 +9,25 @@
 	margin: 0 auto;
 	background-image: url('ui/mainmenu_title.png');
 }
+#mainmenu-title:lang(es) {
+	background-image: url('ui/mainmenu_title-es.png');
+}
+
+#mainmenu-title:lang(ja-jp) {
+	background-image: url('ui/mainmenu_title-ja.png');
+}
 #mainmenu-start {
 	top: 61%;
 	left: 35%;
 	width: 31%;
 	height: 29%;
 	background-image: url('ui/mainmenu_start.png');
+}
+#mainmenu-start:lang(es){
+	background-image: url('ui/mainmenu_start-es.png');
+}
+#mainmenu-start:lang(ja-jp){
+	background-image: url('ui/mainmenu_start-ja.png');
 }
 
 /* Act 1 */
@@ -199,4 +212,11 @@
 	width: 23%;
 	height: 43%;
 	background-image: url('ui/credits_tombstone.png');
+}
+
+#credits-tombstone:lang(es){
+	background-image: url('ui/credits_tombstone-es.png');
+}
+#credits-tombstone:lang(ja-jp){
+	background-image: url('ui/credits_tombstone-ja.png');
 }
